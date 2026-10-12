@@ -1,29 +1,22 @@
-# kttd-05-W4
-- Môn học: Kiểm thử phần mềm – Thực hành kiểm thử tự động
-- Nhóm: W4
-- Thành viên:
-  1. A46958 Lưu Bá Quang (Trưởng nhóm)
-  2. A48566 Nguyễn Tường Vân
-  3. A48138 Hồ Tùng Bách
-  4. A48561 Vũ Thế Duyệt
-  5. A48117 Phùng Minh Đức
+Hướng Dẫn Cài Đặt & Chạy Test
 
-## Hướng dẫn cài đặt và câu lệnh chạy kiểm thử
+1. Cài đặt môi trường
+Đảm bảo máy đã cài sẵn Python và trình duyệt Google Chrome.
 
-### 1. Chuẩn bị môi trường ảo
-python3 -m venv .venv
-source .venv/bin/activate
+Mở Terminal / Command Prompt tại thư mục dự án và cài các thư viện cần thiết:
+  pip install pytest selenium
 
-### 2. Cài đặt các thư viện phụ thuộc
-pip install -r requirements.txt
+2. Câu lệnh thực thi test
+Chạy test và xem kết quả chi tiết kèm log print:
+  pytest -v -s test_smoke.py
 
-### 3. Câu lệnh chạy kiểm thử tuần 04
-# Chạy bằng pytest
-pytest -v tuan-04/test_smoke.py
+Chỉ chạy để xem tổng kết Pass/Fail nhanh:
+  pytest test_smoke.py
 
-# Hoặc chạy trực tiếp bằng python
-python tuan-04/test_smoke.py
+Chạy toàn bộ các file test có trong thư mục:
+  pytest -v
+  
+3. Đọc kết quả
+PASSED (màu xanh lá): Test case chạy đúng yêu cầu, trang web phản hồi chuẩn.
 
-### 4. Kết quả mong đợi
-- Trình duyệt Chrome tự động mở trang web kiểm thử, phóng to và tự đóng lại.
-- Terminal hiển thị kết quả kiểm thử: 1 passed màu xanh lá.
+FAILED (màu đỏ): Có lỗi xảy ra hoặc tiêu đề trang web không khớp với kỳ vọng. Terminal sẽ chỉ rõ dòng bị sai.
