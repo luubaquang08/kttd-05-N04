@@ -1,3 +1,5 @@
+from time import time
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -40,6 +42,12 @@ def test_login_success(driver):
     # 3. Nhấn nút Đăng nhập
     login_button = driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
     login_button.click()
+    import time
+
+    time.sleep(2)
+
+    print("URL hiện tại:", driver.current_url)
+    print("Thông báo trên trang:", driver.find_element(By.ID, "flash").text)
 
     # 4. Kiểm tra kết quả mong đợi
     # Kiểm tra URL đã chuyển sang trang bảo mật
